@@ -21,8 +21,7 @@ export class DetailPokemonComponent implements OnInit {
     const pokemonId: string | null = this.route.snapshot.paramMap.get('id');   // ici c'est grace à ActivatedRoute
    if(pokemonId){
     this.pokemon = this.PokemonList.find(pokemon => pokemon.id == +pokemonId)
-   }
-    
+   }    
   }
   // bouton retour
   goToPokemonList() {
