@@ -5,6 +5,7 @@ import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.componen
 import { BorderCardDirective } from './border-card.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { RouterModule, Routes } from '@angular/router';
+import { PokemonService } from './pokemon.service';
 
 const pokemonRoutes : Routes = [
 { path:'pokemons', component: ListPokemonComponent },
@@ -21,6 +22,7 @@ const pokemonRoutes : Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(pokemonRoutes)
-  ]
+  ],
+  providers: [PokemonService]     // on va arroser le service PokemonService juste au niveau pokemon et non pas toute l'appli
 })
 export class PokemonModule { }
