@@ -14,7 +14,7 @@ export class ListPokemonComponent implements OnInit {
   pokemonList: Pokemon[];
 
   constructor(
-    private router: Router, 
+    private router: Router,             // permet d'utiliser la methode navigate pour le routage des routes
     private  pokemonService: PokemonService
     ){ }
 
@@ -23,7 +23,7 @@ export class ListPokemonComponent implements OnInit {
     }
 
   goToPokemon(pokemon: Pokemon){
-    this.router.navigate(['/pokemon', pokemon.id])
+    this.router.navigate(['/pokemon', pokemon.id])  // permet de diriger le click vers le detail d'un pokemon sachant sont id
   }
   
 }

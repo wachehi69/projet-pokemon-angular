@@ -21,13 +21,13 @@ export class DetailPokemonComponent implements OnInit {
      ) { }
 
   ngOnInit(): void {
-   // Récuperation de l'id  provenant de la route
+   // Récuperation de l'id  provenant de la route , id récuperé est toujour un string
     const pokemonId: string | null = this.route.snapshot.paramMap.get('id');   // ici c'est grace à ActivatedRoute
    if(pokemonId){
     this.pokemon = this.pokemonService.getPokemonById(+pokemonId);
    }    
   }
-  // bouton retour
+  // bouton retour à la liste des pokemons
   goToPokemonList() {
    this.router.navigate(['/pokemons'])     //ici c'est grâce au service  Router qui permet de naviguer d'un lien à l'autre
   }

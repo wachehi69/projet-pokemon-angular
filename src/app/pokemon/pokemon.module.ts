@@ -6,6 +6,8 @@ import { BorderCardDirective } from './border-card.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonService } from './pokemon.service';
+import { FormsModule } from '@angular/forms';
+import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 
 const pokemonRoutes : Routes = [
 { path:'pokemons', component: ListPokemonComponent },
@@ -17,12 +19,14 @@ const pokemonRoutes : Routes = [
     ListPokemonComponent,
     DetailPokemonComponent,
     BorderCardDirective,
-    PokemonTypeColorPipe
+    PokemonTypeColorPipe,
+    PokemonFormComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,    // Gere les ngform e et ngModel pour les formulaires angular
     RouterModule.forChild(pokemonRoutes)
   ],
-  providers: [PokemonService]     // on va arroser le service PokemonService juste au niveau pokemon et non pas toute l'appli
+  providers: [PokemonService]     // on va arroser le service PokemonService uniquement dans le module pokemon et non pas toute l'appli
 })
 export class PokemonModule { }

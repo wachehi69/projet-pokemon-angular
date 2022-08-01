@@ -4,7 +4,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
   { path:'', redirectTo: 'pokemons', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent }   // interception de toutes les autres request et envoyés vers PageNotFoundComponent
+  { path: '**', component: PageNotFoundComponent }   // interception de toutes les autres requetes et envoyés vers PageNotFoundComponent
 ]; 
 
 @NgModule({

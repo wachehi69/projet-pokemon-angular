@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,13 +9,13 @@ import { PokemonModule } from './pokemon/pokemon.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
- 
+    AppComponent, 
     PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    PokemonModule,
+    FormsModule,         //importer le formsModule, il concerne les formulaires d'angulare
+    PokemonModule,       // ici on va charger d'abord le pokemonModule avant AppRoutingModule pour eviter un probleme des routes
     AppRoutingModule
     
   ],
